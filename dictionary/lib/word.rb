@@ -13,4 +13,8 @@ class Word
   define_method(:word) do
     @word
   end
+
+  define_method(:language) do
+    @language
+  end
 end

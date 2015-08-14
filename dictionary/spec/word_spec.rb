@@ -12,4 +12,11 @@ describe(Word) do
       expect(test_word.word()).to(eq("incorrigible"))
     end
   end
+
+  describe('#language') do
+    it("returns the language of the word") do
+      test_word = Word.new("incorrigible", "english", "latin")
+      expect(test_word.language()).to(eq("english"))
+    end
+  end
 end
