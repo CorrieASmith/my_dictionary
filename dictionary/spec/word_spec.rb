@@ -3,8 +3,9 @@ require('word')
 require('definition')
 
 describe(Word) do
-  # before() do
-  #   Word.clear()
+  before() do
+    Word.clear()
+  end
 
   describe('#word') do
     it("receives user input and returns one word") do
@@ -38,6 +39,14 @@ describe(Word) do
       test_word = Word.new("incorrigible", "english", "latin")
       test_word.save()
       expect(Word.all()).to(eq([test_word]))
+    end
+  end
+
+  describe('.clear') do
+    it("empties out all of the saved words") do
+      Word.new("incorrigible", "english", "latin")
+      Word.clear()
+      expect(Word.all()).to(eq([]))
     end
   end
 end
