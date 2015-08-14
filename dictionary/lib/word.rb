@@ -21,4 +21,8 @@ class Word
   define_method(:root) do
     @root
   end
+
+  define_singleton_method(:all) do
+    @@word
+  end
 end
