@@ -20,7 +20,7 @@ describe('Definition') do
 
   describe('#antonym') do
     it("returns an antonym of the word") do
-      test_definition = Definition.new("not able to be corrected", "habitiual", "repentant")
+      test_definition = Definition.new("not able to be corrected", "habitual", "repentant")
       expect(test_definition.antonym()).to(eq("repentant"))
     end
   end
@@ -28,6 +28,14 @@ describe('Definition') do
   describe('.all') do
     it("is empty at first") do
       expect(Definition.all()).to(eq([]))
+    end
+  end
+
+  describe('#save') do
+    it("adds a definition to the array of words") do
+      test_definition = Definition.new("not able to be corrected", "habitual", "repentant")
+      test_definition.save()
+      expect(Definition.all()).to(eq([test_definition]))
     end
   end
 end
