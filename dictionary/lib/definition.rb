@@ -30,4 +30,14 @@ class Definition
   define_singleton_method(:clear) do
     @@definition = []
   end
+
+  define_singleton_method(:find) do |synonym|
+    find_definition = nil
+    @@definition.each() do |definition|
+      if definition.synonym().eql?(synonym)
+        find_definition = definition
+      end
+    end
+    find_definition
+  end
 end

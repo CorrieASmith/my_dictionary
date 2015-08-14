@@ -49,4 +49,12 @@ describe(Definition) do
       expect(Definition.all()).to(eq([]))
     end
   end
+
+  describe('.find') do
+    it("returns a full definition by synonym") do
+      test_definition = Definition.new("not able to be corrected", "habitual", "repentant")
+      test_definition.save()
+      expect(Definition.find("habitual")).to(eq(test_definition))
+    end
+  end
 end
