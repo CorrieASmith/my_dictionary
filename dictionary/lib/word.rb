@@ -17,4 +17,8 @@ class Word
   define_method(:language) do
     @language
   end
+
+  define_method(:root) do
+    @root
+  end
 end

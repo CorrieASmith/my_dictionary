@@ -19,4 +19,11 @@ describe(Word) do
       expect(test_word.language()).to(eq("english"))
     end
   end
+
+  describe('#root') do
+    it("returns the root of the word") do
+      test_word = Word.new("incorrigible", "english", "latin")
+      expect(test_word.root()).to(eq("latin"))
+    end
+  end
 end
