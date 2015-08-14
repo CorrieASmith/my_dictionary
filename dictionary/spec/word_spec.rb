@@ -49,4 +49,13 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('#add_definition') do
+    it("adds a definition to an existing word") do
+      test_word = Word.new("incorrigible", "english", "latin")
+      test_definition = Definition.new("not able to be corrected", "habitual", "repentant")
+      test_word.add_definition(test_definition)
+      expect(test_word.meaning()).to(eq([test_definition]))
+    end
+  end
 end

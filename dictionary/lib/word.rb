@@ -22,6 +22,10 @@ class Word
     @root
   end
 
+  define_method(:meaning) do
+    @meaning
+  end
+
   define_singleton_method(:all) do
     @@word
   end
@@ -32,5 +36,9 @@ class Word
 
   define_singleton_method(:clear) do
     @@word = []
+  end
+
+  define_method(:add_definition) do |definition|
+    @meaning.push(definition)
   end
 end
