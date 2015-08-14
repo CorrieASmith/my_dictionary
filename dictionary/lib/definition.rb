@@ -18,4 +18,8 @@ class Definition
   define_method(:antonym) do
     @antonym
   end
+
+  define_singleton_method(:all) do
+    @@definition
+  end
 end

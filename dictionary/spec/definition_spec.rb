@@ -24,4 +24,10 @@ describe('Definition') do
       expect(test_definition.antonym()).to(eq("repentant"))
     end
   end
+
+  describe('.all') do
+    it("is empty at first") do
+      expect(Definition.all()).to(eq([]))
+    end
+  end
 end
