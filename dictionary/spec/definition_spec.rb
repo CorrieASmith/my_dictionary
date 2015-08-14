@@ -2,7 +2,10 @@ require('rspec')
 require('definition')
 require('word')
 
-describe('Definition') do
+describe(Definition) do
+  before() do
+    Definition.clear()
+  end
 
   describe('#meaning') do
     it("returns the meaning of the word") do
@@ -36,6 +39,14 @@ describe('Definition') do
       test_definition = Definition.new("not able to be corrected", "habitual", "repentant")
       test_definition.save()
       expect(Definition.all()).to(eq([test_definition]))
+    end
+  end
+
+  describe('.clear') do
+    it("empties out all of the saved definitions") do
+      Definition.new("not able to be corrected", "habitual", "repentant")
+      Definition.clear()
+      expect(Definition.all()).to(eq([]))
     end
   end
 end
