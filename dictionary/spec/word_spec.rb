@@ -32,4 +32,12 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('#save') do
+    it("adds a new word to the list of saved words") do
+      test_word = Word.new("incorrigible", "english", "latin")
+      test_word.save()
+      expect(Word.all()).to(eq([test_word]))
+    end
+  end
 end
