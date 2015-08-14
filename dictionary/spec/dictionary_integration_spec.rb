@@ -6,6 +6,6 @@ set(:show_expectations, false)
 describe('/', {:type => :feature}) do
   it('Correctly opens index page') do
     visit('/')
-    expect(page).to have_content("My Dictionary")
+    expect(page).to have_content("Welcome to My Dictionary!")
   end
 end

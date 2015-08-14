@@ -13,10 +13,14 @@ get('/new_word') do
   erb(:new_word)
 end
 
-get('/my_dictionary') do
+get('/') do
   @word = Word.all()
   @definition = Definition.all()
-  erb(:my_dictionary)
+  erb(:new_word)
+end
+
+get('/word_info') do
+  erb(:word_info)
 end
 
 post('/') do
@@ -28,7 +32,7 @@ post('/') do
   erb(:success)
 end
 
-post('/') do
+get('/') do
   meaning = params.fetch('meaning')
   synonym = params.fetch('synonym')
   antonym = params.fetch('antonym')
