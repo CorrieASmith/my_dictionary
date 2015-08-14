@@ -40,8 +40,3 @@ get('/') do
   @definition = Definition.all()
   erb(:success)
 end
-
-get('/word_info/:meaning') do
-  @word = Word.find(params.fetch('meaning'))
-  erb(:my_word)
-end

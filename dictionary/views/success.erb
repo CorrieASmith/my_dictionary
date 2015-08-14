@@ -1,7 +1,7 @@
 <h1>You've Added a New Word!</h1>
 
 <ul>
-  <% @word.each() do |word| %>
+  <% @word.to_a.each() do |word| %>
   <li><a href="/word_info">Your Word</a></li>
   <% end %>
 </ul>
